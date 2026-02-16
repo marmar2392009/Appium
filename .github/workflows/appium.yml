@@ -1,0 +1,38 @@
+name: Appium Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        npm install -g appium
+        pip install -r requirements.txt
+
+    - name: Start Appium server
+      shell: powershell
+      run: Start-Process appium
+
+
+    - name: Run tests
+      run: node test_sample.js
