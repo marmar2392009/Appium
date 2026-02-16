@@ -1,0 +1,13 @@
+
+{
+  "name": "appium-test-project",
+  "version": "1.0.0",
+  "description": "Minimal Appium test project for GitHub Actions",
+  "main": "test1.js",
+  "scripts": {
+    "test": "test1.js"
+  },
+  "dependencies": {
+    "appium": "^2.0.0"
+  }
+}
