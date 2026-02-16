@@ -35,4 +35,4 @@ jobs:
 
 
     - name: Run tests
-      run: node test_sample.js
+      run: node test1.js
