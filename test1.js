@@ -1,4 +1,4 @@
-import { remote } from 'webdriverio';
+const { remote } = require('webdriverio');
 
 const capabilities={
   "appium:platformName": "Android",
@@ -50,3 +50,4 @@ await driver.deleteSession();
 
 
 })();
+
