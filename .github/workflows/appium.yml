@@ -27,7 +27,7 @@ jobs:
     - name: Install dependencies
       run: |
         npm install -g appium
-        pip install -r requirements.txt
+        
 
     - name: Start Appium server
       shell: powershell
