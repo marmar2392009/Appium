@@ -55,12 +55,12 @@ jobs:
 
       # ── 8. Run tests inside Android emulator ──────────────────────────────────
       #
-      #    KEY FIX: android-emulator-runner runs each line of script: as its
-      #    own /usr/bin/sh -c call. This means multi-line constructs like
+      #    KEY FIX: android-emulator-runner runs each line of `script:` as its
+      #    own `/usr/bin/sh -c` call. This means multi-line constructs like
       #    until...done and if...fi break with "Syntax error: end of file".
       #
       #    Solution: put ALL shell logic in run_tests.sh (committed to repo),
-      #    and script: just calls it with bash. Bash runs the whole file as
+      #    and `script:` just calls it with bash. Bash runs the whole file as
       #    one process, so loops and conditionals work perfectly.
       #
       - name: Run Appium tests on emulator
