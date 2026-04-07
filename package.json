@@ -1,17 +1,12 @@
-
 {
-  "name": "appium-test-project",
+  "name": "appium-cicd",
   "version": "1.0.0",
-  "description": "Minimal Appium test project for GitHub Actions",
-  "main": "test1.js",
+  "description": "Appium Android CI/CD — Play Store search",
+  "main": "test_sample.js",
   "scripts": {
-    "test": "test1.js"
+    "test": "node test_sample.js"
   },
- "dependencies": {
-  "appium": "^2.0.0",
-  "webdriverio": "^8.18.0"
-}
+  "dependencies": {
+    "webdriverio": "^9.0.0"
   }
-
-
-
+}
