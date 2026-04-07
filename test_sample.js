@@ -17,10 +17,10 @@ const capabilities = {
 
 async function saveScreenshot(driver, filename) {
   try {
-    await driver.saveScreenshot(./${filename});
-    console.log(✅ Screenshot saved: ${filename});
+    await driver.saveScreenshot(`./${filename}`);
+    console.log(`✅ Screenshot saved: ${filename}`);
   } catch (e) {
-    console.error(❌ Could not save screenshot ${filename}:, e.message);
+    console.error(`❌ Could not save screenshot ${filename}:`, e.message);
   }
 }
 
@@ -41,7 +41,7 @@ async function saveScreenshot(driver, filename) {
     // ── Verify Play Store is actually in foreground ──────────────────────────
     const activity = await driver.getCurrentActivity();
     const pkg = await driver.getCurrentPackage();
-    console.log(📱 Current app: ${pkg} / ${activity});
+    console.log(`📱 Current app: ${pkg} / ${activity}`);
 
     if (pkg !== 'com.android.vending') {
       console.log('⚠️  Play Store not in foreground — attempting to activate...');
@@ -71,7 +71,7 @@ async function saveScreenshot(driver, filename) {
         const el = await driver.$(loc);
         await el.waitForDisplayed({ timeout: 5000 });
         searchBar = el;
-        console.log(✅ Search bar found: ${loc});
+        console.log(`✅ Search bar found: ${loc}`);
         break;
       } catch (_) { /* try next */ }
     }
@@ -119,7 +119,7 @@ async function saveScreenshot(driver, filename) {
         const btn = await driver.$(loc);
         if (await btn.isDisplayed()) {
           await btn.click();
-          console.log(✅ Button clicked: ${loc});
+          console.log(`✅ Button clicked: ${loc}`);
           clicked = true;
           await driver.pause(5000);
           break;
